@@ -7,17 +7,18 @@ import numpy as np
 import random
 import argparse
 
+# --------------------------------------------   retrieve data
 parser = argparse.ArgumentParser()
-parser.add_argument('--data_dir', type=str, default='data/0iter/')
+parser.add_argument('--data_dir', type=str, default='data/0iter/') 
 args = parser.parse_args()
 
 inputs = []
 targets = []
 
-B=5
+B=5 # What is that B used for ?
 
 def parse_dag(cell):
-  dag = []
+  dag = []                                      # DAG , the architecture diagram
   for i in range(3, B+2+1):
     name = 'node_{}'.format(i)
     node = cell[name]
